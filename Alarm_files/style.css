@@ -1,0 +1,133 @@
+@media only screen and (min-width:360px) and (max-width:580px) {
+    body{
+        background-color: black;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    .head h1{
+        background-color: rgb(37, 106, 84);
+        width:5rem;
+        font-size:20px;
+        text-align:center;
+        border-radius:10px;
+        font-family: 'Courier New', Courier, monospace;
+        color:rgb(0, 0, 0);
+        position: absolute;
+        left: 0.5rem;
+        top:0;
+    }
+    .head .toggel_dark .btn_toggel{
+        width:4rem;
+        border-radius:10px;
+        height:1.5rem;
+        background-color: rgb(37, 96, 79);
+        right:1rem;
+        padding:5px;
+        position:absolute;
+        top:1rem;
+    }
+    .head .toggel_dark .btn_toggel span{
+        background-color:white;
+        width:1.5rem;
+        height:1.5rem;
+        border-radius:50%;
+        position:absolute;
+        right:2.5rem;
+        transition:1s;    
+    }
+    .sel{
+        background-color:rgb(0, 57, 55);
+        width:5rem;
+        height:5rem;
+        border-radius: 50%;
+        position: absolute;
+        bottom:5rem;
+        left:43%;
+        transform: scale(1,1);
+    }
+    .sel:active{
+        transform: scale(0.95,0.95);
+    }
+    .sel span{
+        color:rgb(255, 255, 255);
+        font-size: 60px;
+        position: absolute;
+        left:1.5rem;
+        top:0.3rem;
+        font-weight:500;
+    }
+
+    .mid{
+        background-color: transparent;
+        width:90%;
+        height:40rem;
+        position: absolute;
+        top:5rem;
+        left:1.6rem;
+        border-radius:10px;
+        overflow-y: scroll;
+        margin-top:10px;
+        padding-top:10px;
+    }
+    .mid::-webkit-scrollbar{
+        visibility: hidden;
+    }
+    .mid div{
+        margin-bottom:15px;
+        width:99%;
+        height:8rem;
+        background-color:rgb(1, 58, 46);
+        position:relative;
+        left:0rem;
+        top:2rem;
+        border-radius:10px;
+    }
+    .mid div .icon_al{
+        width:40px;
+        position: absolute;
+        top:2.5rem;
+        left:0.5rem;
+        opacity:0.5;
+    }
+    .mid div .remove{
+        float: right;
+        width:30px;
+        position: relative;
+        top:5.5rem;
+        right:0.5rem;
+        opacity:0.5;
+    }
+    .set_value{
+        background-color: rgb(23, 114, 84);
+        width:75%;
+        height:17rem;
+        z-index:2;
+        position: absolute;
+        top:25%;
+        left:14%;
+        border-radius:20px;
+        transition:3s;
+        display: none;
+    }
+   
+    
+   
+    .blackscreen{
+        background-color: rgb(0, 0, 0,0.4);
+        width:96%;
+        height:60rem;
+        z-index:1;
+        position: absolute;
+        display: none;
+    }
+    .set_con{
+        background-color: transparent;
+        width:10rem;
+        height:3rem;
+        position: absolute;
+        left:1rem;
+        bottom:0rem;
+
+    }
+}

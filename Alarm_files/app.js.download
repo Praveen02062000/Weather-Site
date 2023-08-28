@@ -1,0 +1,301 @@
+
+const srcs = {
+    dark:"./alarm_res/dark.png",
+    white: "./alarm_res/white.png",
+    remove_dark:"./alarm_res/remove_dark.png"
+}
+        
+const toggle_body = document.querySelector('.toggel_dark');
+const toggel_span =  document.querySelector('.tog_span');
+const body = document.querySelector('body');
+flag_dark = false
+        
+toggle_body.addEventListener('click',()=>{
+    if(flag_dark === false){
+        toggel_span.style.right = "1rem"
+        flag_dark = true
+        body.style.backgroundColor = "white"
+        
+    }else{
+        toggel_span.style.right = "2.5rem"
+        flag_dark = false
+        body.style.backgroundColor = "black"
+    }
+            
+})
+        
+const set_new  =  document.querySelector('.sel');
+const mid_div_con = document.querySelector('.mid');
+        
+set_new.addEventListener('click',()=>{
+    const hr_in = document.createElement('input')
+    const min_in = document.createElement('input')
+    const session = document.createElement('input')
+    const set_btn = document.createElement('button');
+    const cancel_btn = document.createElement('button');
+    const blackscreen  = document.querySelector('.blackscreen')
+    blackscreen.style.display = "block"
+    const value_div = document.createElement('div')
+    value_div.setAttribute("class","set_con")
+    const set_value_con = document.createElement('div');
+    const select_min = document.createElement('select');
+    select_min.setAttribute("class","sel_min")
+    const select_hr = document.createElement('select');
+    select_min.setAttribute("class","sel_hr")
+    const select_pm = document.createElement('select');
+    select_min.setAttribute("class","sel_pm")
+    set_value_con.style.transition = "3s"
+    for(let x = 1;x<=12;x++){
+        const option_hr = document.createElement('option');
+        if(x<=9){
+            
+            option_hr.setAttribute("class","hr_option")
+            option_hr.value ="0"+x
+            option_hr.innerHTML ="0"+x
+            select_hr.appendChild(option_hr)
+
+        }else{
+            
+            option_hr.setAttribute("class","hr_option")
+            option_hr.value = x
+            option_hr.innerHTML = x
+            select_hr.appendChild(option_hr)
+
+        }
+        
+        
+    } 
+    
+    for(let i=0;i<60;i++){
+        const option = document.createElement('option');
+        if(i<=9){
+            
+            option.value = "0"+i
+            option.innerHTML ="0"+i
+            select_min.appendChild(option)
+
+        }else{
+            
+            option.value = i
+            option.innerHTML = i
+            select_min.appendChild(option)
+
+        }
+       
+
+       
+    }
+    for(let y =0;y<2;y++){
+        const option_pm_am = document.createElement('option')
+        if(y === 0){
+            option_pm_am.setAttribute("class","pm_option")
+            option_pm_am.innerHTML = "PM"
+            option_pm_am.value = "PM"
+            select_pm.appendChild(option_pm_am)
+        }else{
+            option_pm_am.setAttribute("class","pm_option")
+            option_pm_am.innerHTML = "AM"
+            option_pm_am.value = "AM"
+            select_pm.appendChild(option_pm_am)
+        }
+    }
+
+   console.log(select_hr.selectedIndex)
+            
+    set_value_con.appendChild(hr_in) 
+    set_value_con.appendChild(min_in) 
+    set_value_con.appendChild(session)    
+    value_div.appendChild(select_hr)       
+    value_div.appendChild(select_min)
+    value_div.appendChild(select_pm)
+    set_value_con.appendChild(value_div)
+    var flag_new = false
+    set_value_con.setAttribute("class","set_value")
+    set_value_con.style.display = "block"
+       
+    body.appendChild(set_value_con)
+
+    blackscreen.addEventListener('click',()=>{
+        set_value_con.style.display = "none"
+        blackscreen.style.display = "none"
+    })
+            // const div = document.createElement('div')
+            // const alarm_img =  document.createElement('img')
+            // const remove = document.createElement('img')
+            // remove.setAttribute("class","remove");
+            // remove.src = srcs.remove_dark
+            // alarm_img.setAttribute("class","icon_al")
+            // alarm_img.src = srcs.dark
+            // div.appendChild(alarm_img)
+            // div.appendChild(remove)
+            // mid_div_con.appendChild(div)
+            // remove.addEventListener('click',()=>{
+            //     mid_div_con.removeChild(div)
+            // })
+            
+            
+})
+        var flag = false
+        function time(){
+            var date = new Date()
+            var min = date.getMinutes()
+            return min
+        }
+        const sec =()=>{
+            var date = new Date()
+            var sec_ = date.getSeconds()
+            console.log(sec_)
+        }
+        
+
+
+const audio = document.createElement('audio')
+audio.src = "./love.mp3"
+var alam = "5:48"
+audio.muted = true
+
+setInterval(function(){
+    var dt = new Date()
+    var hour = dt.getHours()%12
+    var min = dt.getMinutes()
+    var getvalue = `${hour}:${min}`
+    console.log(getvalue)
+
+    if(getvalue === alam){
+        audio.muted = false
+        audio.play()
+        audio.autoplay = true
+        audio.load = true
+    }else{
+        audio.pause()
+    }
+
+},1000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const srcs = {
+//     dark:"./alarm_res/dark.png",
+//     white: "./alarm_res/white.png",
+//     remove_dark:"./alarm_res/remove_dark.png"
+// }
+
+// const toggle_body = document.querySelector('.toggel_dark');
+// const toggel_span =  document.querySelector('.tog_span');
+// const body = document.querySelector('body');
+// flag_dark = false
+
+// toggle_body.addEventListener('click',()=>{
+//     if(flag_dark === false){
+//         toggel_span.style.right = "1rem"
+//         flag_dark = true
+//         body.style.backgroundColor = "white"
+
+//     }else{
+//         toggel_span.style.right = "2.5rem"
+//         flag_dark = false
+//         body.style.backgroundColor = "black"
+//     }
+    
+// })
+
+// const set_new  =  document.querySelector('.sel');
+// const mid_div_con = document.querySelector('.mid');
+
+// set_new.addEventListener('click',()=>{
+//     const blackscreen  = document.querySelector('.blackscreen')
+//     blackscreen.style.display = "block"
+//     const set_value_con = document.createElement('div');
+//     const select_min = document.createElement('select');
+    
+//     for(let i=0;i<60;i++){
+//         const option = document.createElement('option');
+//         option.value = i
+//         option.innerHTML = i
+//         select_min.appendChild(option)
+//     }
+    
+
+    
+//     set_value_con.appendChild(select_min)
+//     var flag_new = false
+//     set_value_con.setAttribute("class","set_value")
+    
+//     body.appendChild(set_value_con)
+    
+//     // const div = document.createElement('div')
+//     // const alarm_img =  document.createElement('img')
+//     // const remove = document.createElement('img')
+//     // remove.setAttribute("class","remove");
+//     // remove.src = srcs.remove_dark
+//     // alarm_img.setAttribute("class","icon_al")
+//     // alarm_img.src = srcs.dark
+//     // div.appendChild(alarm_img)
+//     // div.appendChild(remove)
+//     // mid_div_con.appendChild(div)
+//     // remove.addEventListener('click',()=>{
+//     //     mid_div_con.removeChild(div)
+//     // })
+    
+    
+// })
+// var flag = false
+// function time(){
+//     var date = new Date()
+//     var min = date.getMinutes()
+//     return min
+// }
+// const sec =()=>{
+//     var date = new Date()
+//     var sec_ = date.getSeconds()
+//     console.log(sec_)
+// }
+
+
+
+
+
+
+
+
+
+

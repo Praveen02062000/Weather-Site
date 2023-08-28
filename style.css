@@ -1,0 +1,697 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600;700&display=swap');
+
+
+body{
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#0a1a1a;
+}
+
+
+
+/* ================== search con ======================= */
+.search-con{
+    background-color:  transparent;
+    width:40%;
+    height:20rem;
+    position: absolute;
+    left:45rem;
+    top:10rem;
+    display: flex;
+    justify-content: center;
+}
+.search-con input{
+    color: white;
+    background-color: transparent;
+    width:700px;
+    height:4rem;
+    position:absolute;
+    top:5rem;
+    padding-left:50px;
+    padding-right:80px;
+    font-size:25px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius:25px;
+    font-weight: bolder;
+    border:2px solid white;
+}
+.search-con input:focus{
+    outline:none;
+    color:white;
+}
+.search-con img{
+    width:30px;
+    background-color: transparent;
+    height:30px;
+    position: absolute;
+    top:6.4rem;
+    right:5rem;
+    cursor:pointer;
+}
+/* ============== main details ====================================== */
+
+.details-con{
+    background-color:rgba(44, 44, 44, 0.5);
+    width:50rem;
+    height:30rem;
+    position: absolute;
+    left:50rem;
+    top: 23rem;
+    border-radius: 20px;
+    transform: scale(1,1);
+    animation: closeup 0.7s linear 1;
+    font-family:'Kanit', sans-serif;
+    display:none;
+    box-shadow:0px 0px 20px rgb(56, 97, 88);
+}
+.details-con .city{
+    color:rgb(255, 255, 255);
+    font-size:40px;
+    position:absolute;
+    text-transform: uppercase;
+    left:20rem;
+    text-align: center;
+}
+
+.details-con .weather-icon{
+    width: 200px;
+    position: absolute;
+    top:1rem;
+}
+
+.details-con .lower-sec{
+    
+    display: grid;
+
+    background-color: transparent;
+    width:90%;
+    bottom:0;
+    left: 2.5em;;
+    position:absolute;
+    height: 15rem;
+    
+}
+
+@keyframes closeup {
+    0%{
+        transform: scale(0,0);
+    }
+    
+}
+
+.lower-sec img{
+    position: relative;
+    top: 5rem;
+    left: 7.6rem;
+    width:50px;
+}.lower-sec h2{
+    color: white;
+    position: relative;
+    top:8rem;
+    left:2rem;
+
+}
+.lower-sec .tempu{
+    background-color:rgb(0, 0, 0,0);
+    width: 60%;
+    height: 15rem;
+    position: relative;
+    bottom:9rem;
+    left:14rem;
+    color: white;
+}
+.lower-sec .tempu h2{
+    position: absolute;
+    top:-3rem;
+    font-size:90px;
+}
+.lower-sec .tempu h3{
+    position: relative;
+    left:2rem;
+    bottom:1rem;
+}
+.lower-sec .tempu img{
+    position:relative;
+    left:15rem;
+    top:1rem;
+}
+.lower-sec .tempu h4{
+    position:relative;
+    left:2rem;
+    top:-1rem;
+}
+.lower-sec .sub-main {
+    
+    display: grid;
+    border-radius: 20px;
+    position: relative;
+    bottom:11rem;
+    background-color: rgb(0, 0, 0,0.4);
+    grid-template-columns: auto auto auto;
+}
+.sub-main h2{
+    position: relative;
+    top:0rem;
+}
+
+/* =========== sub details ========== */
+
+
+.sub-detail1 .wind{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width:20rem;
+    float: right;
+    position: absolute;
+    top:23rem;
+    right:27rem;
+    height:15rem;
+    animation: mini 0.9s linear 1;
+    opacity:1;
+    display:none;
+    
+}
+.sub-detail1 .coord{
+    color:white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width:20rem;
+    float: right;
+    position: absolute;
+    top:40rem;
+    right:27rem;
+    display:none;
+    height:15rem;
+    animation: mini 2s linear 1;
+    
+    opacity:1;
+}
+@keyframes mini {
+
+    0%{
+        opacity: 0;
+        right:0rem;
+    }25%{
+        opacity:0.3;
+        right:8rem;
+    }50%{
+        opacity:0.5;
+        right:16rem;
+    }75%{
+        opacity:0.7;
+        right:22rem;
+    }100%{
+        opacity:1;
+        right:27rem;
+    }
+    
+}
+.nav-slide .slide{
+    z-index:0;
+    background-color: rgba(0, 0, 0, 0.791);
+    width:40rem;
+    position: absolute;
+    top:0rem;
+    left:-50rem;
+    height:80rem;
+    border-radius: 10px;
+    transition:2s;
+    display: none;
+   
+}
+.nav-slide  img:nth-child(2){
+    z-index:1;
+}
+.back{
+    transition-delay:3s;
+}
+
+.slide {
+    display:grid;
+    grid-template-rows:170px 170px  170px 170px 170px;
+    
+}
+.slide div{
+    background-color: rgba(11, 67, 57, 0.8);
+    width:30rem;
+    border-radius: 10px;
+    height:8rem;
+    position: relative;
+    top:15rem;
+    left:5rem;
+    transform: scale(1,1);
+    margin-bottom: 40px;
+}
+.slide div:hover{
+    transform: scale(1.1,1.1);
+    box-shadow: 0px 0px 20px rgb(110, 110, 110);
+    
+}
+
+.wind h1{
+    text-decoration: underline;
+    color: rgb(184, 255, 255);
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    
+}
+.wind h2{
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:larger;
+    position: relative;
+    left: 2rem;
+    top:0rem;
+}
+.coord h1{
+    text-decoration: underline;
+    color: rgb(184, 255, 255);
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+
+}.coord h2{
+    top:1rem;
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:large;
+    position: relative;
+    left: 2rem;
+}
+.sub-detail1 .sun{
+    border-radius: 20px;
+    animation: weather-des 0.9s linear 1;
+    background-color: rgba(0, 0, 0, 0.515);
+    width:60rem;
+    height: 15rem;
+    position:absolute;
+    top:57rem;
+    left:45rem;
+    display: none;
+}
+.sun .sunrise,.sunset {
+    position: relative;
+    top:2rem;
+    left: 2rem;
+    height:5rem;
+    border-radius: 10px;
+    background-color: rgba(37, 139, 159, 0.248);
+    margin:10px;
+    width: 36%;
+}
+.sun .sunrise img,.sunset img{
+    position: relative;
+    left: 5px;
+    top:5px;
+}
+.sun .sunrise h2 ,.sunset h2{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-size:19px;
+    position: relative;
+    left: 5rem;
+    top: -3.8rem;
+
+}
+.weather-des img{
+    position: relative;
+    width:80px;
+    top:2.5rem;
+    left:3rem;
+}
+.weather-des h1,h2{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    left:14rem;
+    bottom:4rem;
+    color: white;
+}
+.weather-des {
+    border-radius: 20px;
+    background-color: rgba(14, 54, 50, 0.637);
+    width: 50%;
+    height:10rem;
+    position: relative;
+    left: 26rem;
+    bottom:9rem;
+   
+}
+
+@keyframes weather-des {
+    0%{
+        top: 79rem;
+    }
+    
+}
+
+.star{
+    z-index:-1;
+    width:250px;
+    top:15rem;
+    left:-20rem;
+    position: absolute;
+    animation: moon 60s linear infinite;
+    display: none;
+
+}.cloud{
+    width: 700px;
+    animation: moon 60s linear infinite;
+    position:absolute;
+    display: none;
+    top:15rem;
+    left:-25rem;
+}
+.cloud2{
+    width: 600px;
+    position: relative;
+    top:-80rem;
+    animation: moon 120s linear infinite;
+    display: none;
+    left:-25rem;
+}
+.cloud3{
+    width: 800px;
+    opacity:0.5;
+    position: absolute;
+    top:-10rem;
+    animation: moon 40s linear infinite;
+    display: none;
+    left:-25rem;
+    
+}
+.stars{
+    width:1800px;
+    opacity:0.2;
+    position: relative;
+    top:-10rem;
+    left:-20rem;
+    display: none;
+
+}
+
+@keyframes moon {
+    0%{
+        left: -20rem;
+        opacity: 0.1;
+    }
+    25%{
+        left:10rem;
+        opacity: 1;
+    }
+    50%{
+        left:45rem;
+        opacity: 1;
+    }
+    75%{
+        left: 75rem;
+        opacity: 1;
+    }
+    100%{
+        left:95rem;
+        opacity: 0.1;
+    }
+    
+}
+.main-city{
+    background-color: rgba(28, 61, 102, 0.513);
+    width:22rem;
+    height:33rem;
+    position: absolute;
+    float: right;
+    bottom:21rem;
+    border-radius:20px;
+    right:2rem;
+    display:none;
+    animation: mini1 3s linear 1;
+   
+    color: rgb(255, 255, 255);
+}
+
+@keyframes mini1 {
+    0%{
+        right:-27rem;
+    }
+    
+}
+.main-city h1{
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.main-city h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
+    position: relative;
+    top: 4rem;
+    left:2rem;
+    margin-bottom:40px;
+}
+
+.slide div img{
+    width: 100px;
+    position: relative;
+    top:1rem;
+}
+.slide div h2{
+    position: relative;
+    left:11rem;
+    top:-6rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+.slide div h3{
+    color: white;
+    position: relative;
+    top:-6rem;
+    font-family: 'Courier New', Courier, monospace;
+    left:12rem;
+}
+
+
+/* ====================================================== */
+
+.AI{
+    background-color:rgb(0, 0, 0);
+    width:3rem;
+    height:3rem;
+    border-radius:50%;
+    position:absolute;
+    float: right;
+    right:5rem;
+    top:3rem;
+    cursor: pointer;
+    display:none;
+    
+    
+}
+@keyframes spinner {
+    0%{
+        transform: rotate(90deg);
+        box-shadow: 6px 6px 10px rgb(112, 246, 35);
+    }
+    100%{
+        box-shadow: 0px 0px 10px rgb(255, 132, 0);
+    }
+    
+}
+.ai-img{
+    z-index:0;
+    cursor: pointer;
+    width:28px;
+    position:absolute;
+    float: right;
+    right:5.5rem;
+    top:3.5rem;
+    animation: blinker 1s linear infinite;
+    display: none;
+}
+
+@keyframes blinker {
+    0%{
+        opacity:0.5;
+    }
+    100%{
+        opacity:1;
+    }
+    
+}
+
+.detail-con{
+    color:rgb(128, 128, 128);
+    border-radius:30px;
+    background-color: transparent;
+    width:50rem;
+    height:10rem;
+    padding:10px;
+    position: absolute;
+    bottom:26rem;
+    text-align: center;
+    left:50rem;
+    font-size:18px;
+    display: block;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}.text-con h3:nth-child(2){
+    position: relative;
+    top: 0rem;
+    font-size:18px;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+}
+.text-con h3:nth-child(2) a{
+    color:  rgb(26, 197, 220);
+    text-decoration: none;
+}
+
+
+/* ====================== for weather more =========================== */
+.div_weather .div_weather_more{
+    background-color:rgb(1, 70, 64);
+    width:70rem;
+    height:50rem;
+    position: absolute;
+    left:45rem;
+    top:10rem;
+    border-radius:40px;
+    display:none;
+    z-index:1;
+    transform: scale(1,1);
+    animation: popup 0.2s linear 1;
+    transition:0.1s;
+    box-shadow: 2px 2px 20px white;
+
+}
+
+@keyframes popup {
+    0%{
+        transform: scale(0.7,0.7);
+
+    }
+    100%{
+        transform: scale(1,1);
+        transition:0.5s;
+    }
+    
+}
+.weather_back_con{
+    width:60px;
+    position: absolute;
+    left: 2rem;
+    top:2rem;
+    cursor: pointer;
+    
+}
+
+.div_weather_more .main_con_weather{
+    background-color: rgb(2, 33, 44,0.9);
+    width:80%;
+    height:30rem;
+    border-radius:30px;
+    position: absolute;
+    top:4rem;
+    left:7.3rem;
+
+}
+.weather_icon{
+    width:200px;
+    position: absolute;
+    right:2rem;
+}.des_weather{
+    color:rgb(255, 255, 255);
+    position: absolute;
+    top:5rem;
+    font-size:36px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    left:22rem;
+}
+.tempu_time{
+    background-color:black;
+    width:80%;
+    height:10rem;
+    position: absolute;
+    bottom:1rem;
+    left:5.5rem;
+    border-radius:20px;
+}
+.tempu_time{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: auto;
+
+} 
+.tempu_time h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
+    position:relative;
+    top:1.6rem;
+    left:1rem;
+    text-align:left;
+}
+.tempu_time h1{
+    color: rgb(137, 136, 136);
+    font-family:'Courier New', Courier, monospace;
+    position: relative;
+    left: 4rem;
+    top:1rem;
+    font-style:normal;   
+}
+.div_weather_more .feels_weather{
+    background-color: rgb(0, 0, 0);
+    width:17rem;
+    height:16rem;
+    position: absolute;
+    top:1.5rem;
+    left:2rem;
+    border-radius:30px;
+
+}.feels_weather h2{
+    position:relative;
+    top: 2rem;
+    left:2rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.sun-conn{
+    background-color: rgb(3, 52, 43);
+    width:50rem;
+    height:10rem;
+    position: absolute;
+    border-radius:20px;
+    bottom:3rem;
+    left:10.5rem;
+}
+.sun-conn img:nth-child(1){
+    width:60px;
+    position: absolute;
+    top:3rem;
+    left:2rem;
+    
+    
+}
+.sun-conn h1:nth-child(2){
+    position: relative;
+    top:2.5rem;
+    left:7rem;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:28px;
+}
+.sun-conn img:nth-child(3){
+    width:60px;
+    position: absolute;
+    top:3rem;
+    left:24rem;
+
+}
+.sun-conn h1:nth-child(4){
+    position: relative;
+    top:-1rem;
+    left:29rem;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:28px;
+}
+.screen{
+    background-color:rgb(10, 10, 10,0.8);
+    width:100%;
+    height:82rem;
+    z-index:1;
+    position: absolute;
+    display:none;
+}
